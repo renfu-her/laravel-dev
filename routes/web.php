@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Backend\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::group(['prefix' => 'backend'], function(){
+    Route::resource('/', AdminController::class);
 });
