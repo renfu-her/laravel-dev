@@ -1,82 +1,29 @@
 <?php
 
-use ProtoneMedia\LaravelFormComponents\Components;
-
 return [
-    'prefix' => '',
 
-    /** tailwind | tailwind-2 | tailwind-forms-simple | bootstrap-4 | bootstrap-5 */
-    'framework' => 'bootstrap-5',
+    /**
+     * The UI framework that should be used to generate the components.
+     * Can be set to:
+     * - bootstrap-5
+     * - bootstrap-4
+     * - tailwind-2 (upcoming feature)
+     */
+    'ui' => 'bootstrap-5',
 
-    'use_eloquent_date_casting' => false,
+    /** Whether form components should use floating labels. */
+    'floating_label' => false,
 
-    /** bool | string */
-    'default_wire' => false,
+    /**
+     * Whether form input/textarea/checkbox/radio/switch components should display their validation success.
+     * Success status will be display when errors are sent to the view with no matching with the component name.
+     */
+    'display_validation_success' => true,
 
-    'components' => [
-        'form' => [
-            'view'  => 'form-components::{framework}.form',
-            'class' => Components\Form::class,
-        ],
+    /**
+     * Whether form input/textarea/checkbox/radio/switch components should display their validation failure.
+     * Fail status will be display when errors are sent to the view with a match with the component name.
+     */
+    'display_validation_failure' => true,
 
-        'form-checkbox' => [
-            'view'  => 'form-components::{framework}.form-checkbox',
-            'class' => Components\FormCheckbox::class,
-        ],
-
-        'form-errors' => [
-            'view'  => 'form-components::{framework}.form-errors',
-            'class' => Components\FormErrors::class,
-        ],
-
-        'form-group' => [
-            'view'  => 'form-components::{framework}.form-group',
-            'class' => Components\FormGroup::class,
-        ],
-
-        'form-input' => [
-            'view'  => 'form-components::{framework}.form-input',
-            'class' => Components\FormInput::class,
-        ],
-
-        'form-input-group' => [
-            'view'  => 'form-components::{framework}.form-input-group',
-            'class' => Components\FormInputGroup::class,
-        ],
-
-        'form-input-group-text' => [
-            'view'  => 'form-components::{framework}.form-input-group-text',
-            'class' => Components\FormInputGroupText::class,
-        ],
-
-        'form-label' => [
-            'view'  => 'form-components::{framework}.form-label',
-            'class' => Components\FormLabel::class,
-        ],
-
-        'form-radio' => [
-            'view'  => 'form-components::{framework}.form-radio',
-            'class' => Components\FormRadio::class,
-        ],
-
-        'form-range' => [
-            'view'  => 'form-components::{framework}.form-range',
-            'class' => Components\FormRange::class,
-        ],
-
-        'form-select' => [
-            'view'  => 'form-components::{framework}.form-select',
-            'class' => Components\FormSelect::class,
-        ],
-
-        'form-submit' => [
-            'view'  => 'form-components::{framework}.form-submit',
-            'class' => Components\FormSubmit::class,
-        ],
-
-        'form-textarea' => [
-            'view'  => 'form-components::{framework}.form-textarea',
-            'class' => Components\FormTextarea::class,
-        ],
-    ],
 ];

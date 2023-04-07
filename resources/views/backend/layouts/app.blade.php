@@ -7,12 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Dashboard - SB Admin</title>
-    <link href="{{ asset('admin/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('admin/css/all.min.css') }}" rel="stylesheet">
-    {{-- <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" /> --}}
-    <link href="{{ asset('admin/css/styles.css') }}" rel="stylesheet" />
-    <link href="{{ asset('admin/css/custom.css') }}?t={{ time() }}" rel="stylesheet" />
+    <title>Admin</title>
+    <link rel="stylesheet" href="{{ asset('admin/css/bootstrap.min.css') }}" >
+    <link rel="stylesheet" href="{{ asset('admin/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/css/jquery.dataTables.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/css/dataTables.bootstrap5.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/css/styles.css') }}" />
+    <link rel="stylesheet" href="{{ asset('admin/css/custom.css') }}?t={{ time() }}" />
+
+    @yield('css')
 </head>
 
 <body class="sb-nav-fixed">
@@ -28,7 +31,9 @@
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-user fa-fw"></i>
+                    </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="#!">Settings</a></li>
                         <li><a class="dropdown-item" href="#!">Activity Log</a></li>
@@ -47,11 +52,14 @@
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
-                        <div class="sb-sidenav-menu-heading">Core</div>
-                        <a class="nav-link" href="index.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Dashboard
+                        <div class="sb-sidenav-menu-heading">管理單位</div>
+                        <a class="nav-link" href="{{ asset('backend/user') }}">
+                            <div class="sb-nav-link-icon">
+                                <i class="fas fa-user-alt"></i>
+                            </div>
+                            管理者名單
                         </a>
+
                         <div class="sb-sidenav-menu-heading">Interface</div>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
                             data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
@@ -122,13 +130,18 @@
             @yield('content')
         </div>
     </div>
-    <script src="{{ asset('admin/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('admin/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('admin/js/jquery-3.6.4.min.js') }}"></script>
+    <script src="{{ asset('admin/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('admin/js/dataTables.bootstrap5.min.js') }}"></script>
     <script src="{{ asset('admin/js/scripts.js') }}"></script>
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script> --}}
-    {{-- <script src="assets/demo/chart-area-demo.js"></script>
-        <script src="assets/demo/chart-bar-demo.js"></script> --}}
-    {{-- <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script> --}}
-    {{-- <script src="js/datatables-simple-demo.js"></script> --}}
+
+    <script>
+        @if(Session::has('message'))
+            alert('{{ Session::get('message') }}')
+        @endif
+    </script>
+    @yield('js')
 </body>
 
 </html>
