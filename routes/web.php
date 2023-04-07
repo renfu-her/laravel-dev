@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\UserAdminController;
 use App\Http\Controllers\Backend\LoginAdminController;
+use App\Http\Controllers\Backend\MemberAdminController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -13,6 +14,7 @@ Route::get('/', function () {
 Route::group(['prefix' => 'backend'], function(){
     Route::resource('/', AdminController::class);
     Route::resource('/user', UserAdminController::class);
+    Route::resource('/member', MemberAdminController::class);
 });
 
 Route::get('/backend/login', [LoginAdminController::class, 'login']);
