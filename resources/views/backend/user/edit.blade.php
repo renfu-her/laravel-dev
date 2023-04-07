@@ -3,11 +3,11 @@
 @section('content')
     <main>
         <div class="container-fluid px-4">
-            <h1 class="mt-4">管理者名單</h1>
+            <h1 class="mt-4">管理員名單</h1>
 
             <div class="card mb-4">
                 <div class="card-header">
-                    管理者名單 - 更新
+                    管理員名單 - 更新
                 </div>
 
                 <div class="card-body">

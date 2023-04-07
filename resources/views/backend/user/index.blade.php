@@ -3,15 +3,11 @@
 @section('content')
     <main>
         <div class="container-fluid px-4">
-            <h1 class="mt-4">Tables</h1>
-            <ol class="breadcrumb mb-4">
-                <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                <li class="breadcrumb-item active">Tables</li>
-            </ol>
+            <h1 class="mt-4">管理員管理</h1>
 
             <div class="card mb-4">
                 <div class="card-header">
-                    管理者名單
+                    管理員名單
                 </div>
 
                 <div class="card-body">
