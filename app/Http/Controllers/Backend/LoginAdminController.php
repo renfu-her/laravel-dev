@@ -50,5 +50,8 @@ class LoginAdminController extends Controller
       */
       public function logout(){
 
+        session()->forget(['admin_id']);
+
+        return redirect('/backend/login');
       }
 }
