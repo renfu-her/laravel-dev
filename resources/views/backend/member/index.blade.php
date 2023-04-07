@@ -28,8 +28,8 @@
                             @foreach($data as $key => $value)
                             <tr>
                                 <td>{{ $value->name }}</td>
-                                <td>{{ $value->email }}</td>
                                 <td>{{ $value->nick_name }}</td>
+                                <td>{{ $value->email }}</td>
                                 <td>
                                     <button class="btn btn-warning" onclick="edit_row({{ $value->id }})">
                                         <i class="fa-solid fa-pen-to-square"></i> 編輯
