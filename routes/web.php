@@ -11,7 +11,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => 'backend'], function(){
+Route::group(['prefix' => 'backend', 'middleware' => 'authAdmin'], function(){
     Route::resource('/', AdminController::class);
     Route::resource('/user', UserAdminController::class);
     Route::resource('/member', MemberAdminController::class);
