@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "243c0b9bc78283eb219af720cea4a086",
+    "content-hash": "724e2ce88c66b48eb3a05fb41429f566",
     "packages": [
         {
             "name": "barryvdh/laravel-dompdf",
@@ -1458,6 +1458,60 @@
                 }
             ],
             "time": "2021-10-07T12:57:01+00:00"
+        },
+        {
+            "name": "ikechukwukalu/makeservice",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ikechukwukalu/makeservice.git",
+                "reference": "d8765b7be39b60aac307966897e77cd37d45b4a5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ikechukwukalu/makeservice/zipball/d8765b7be39b60aac307966897e77cd37d45b4a5",
+                "reference": "d8765b7be39b60aac307966897e77cd37d45b4a5",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^9.0|^10.0",
+                "php": ">=8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^7.0|^8.0",
+                "php-parallel-lint/php-parallel-lint": "dev-develop",
+                "phpunit/phpunit": "^9.0|^10.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Ikechukwukalu\\Makeservice\\MakeServiceServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ikechukwukalu\\Makeservice\\": "src/",
+                    "Ikechukwukalu\\Makeservice\\Console\\Commands\\": "src/Console/Commands/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ikechukwu Kalu",
+                    "email": "ea.ikechukwukalu@gmail.com"
+                }
+            ],
+            "description": "A laravel package for scaffolding service classes.",
+            "support": {
+                "issues": "https://github.com/ikechukwukalu/makeservice/issues",
+                "source": "https://github.com/ikechukwukalu/makeservice/tree/v1.0.0"
+            },
+            "time": "2023-02-24T11:42:43+00:00"
         },
         {
             "name": "intervention/image",
