@@ -50,9 +50,7 @@ class UserAdminController extends Controller
      */
     public function edit($id){
 
-        $data = User::find($id);
-
-        return view('backend.user.edit', compact('data'));
+        return view('backend.user.edit', compact('id'));
     }
 
     /**
