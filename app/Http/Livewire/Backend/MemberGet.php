@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Backend;
 
 use Livewire\Component;
 
@@ -8,6 +8,6 @@ class MemberGet extends Component
 {
     public function render()
     {
-        return view('livewire.member-get');
+        return view('livewire.backend.member-get');
     }
 }

@@ -3,24 +3,15 @@
 @section('content')
     <main>
         <div class="container-fluid px-4">
-            <h1 class="mt-4">管理員名單</h1>
+            <h1 class="mt-4">會員管理</h1>
 
             <div class="card mb-4">
                 <div class="card-header">
-                    管理員名單 - 更新
+                    會員管理 - 更新
                 </div>
 
                 <div class="card-body">
-                    <x:form::form method="PUT" :action="route('member.update', $data)" :bind="$data">
-                        <x:form::input name="name" label="姓名" />
-                        <x:form::input name="nick_name" label="昵稱" />
-                        <x:form::input type="email" name="email" label="E-mail" />
-                        <x:form::input type="password" name="password" label="密碼" value="" />
-                        <div class="text-center">
-                            <x:form::button.link class="btn-secondary" href="/backend/user">取消</x:form::button.link>
-                            <x:form::button.submit id="submit">確認存檔</x:form::button.submit>
-                        </div>
-                    </x:form::form>
+                    @livewire('backend.member-update', ['id' => $id])
                 </div>
 
 

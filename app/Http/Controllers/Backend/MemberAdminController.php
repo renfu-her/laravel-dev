@@ -15,7 +15,7 @@ class MemberAdminController extends Controller
      */
     public function index(){
 
-        $data = Member::orderBy('created_at', 'desc')->get();
+        $data = Member::orderByDesc('created_at')->get();
 
         return view('backend.member.index', compact('data'));
     }
@@ -50,9 +50,7 @@ class MemberAdminController extends Controller
      */
     public function edit($id){
 
-        $data = Member::find($id);
-
-        return view('backend.member.edit', compact('data'));
+        return view('backend.member.edit', compact('id'));
     }
 
     /**

@@ -16,7 +16,7 @@ class UserAdminController extends Controller
      */
     public function index(){
 
-        $data = User::all();
+        $data = User::orderByDesc('created_at')->get();
 
         return view('backend.user.index', compact('data'));
     }
